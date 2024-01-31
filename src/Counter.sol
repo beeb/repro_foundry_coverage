@@ -8,7 +8,22 @@ contract Counter {
         number = newNumber;
     }
 
-    function increment() public {
-        number++;
+    function incrementFor() public {
+        for (uint256 i = 0; i < 10; i++) {
+            number++;
+            if (number > 20) {
+                number -= 2;
+            }
+        }
+    }
+
+    function incrementDoWhile() public {
+        uint256 i = 0;
+        do {
+            number++;
+            if (number > 20) {
+                number -= 2;
+            }
+        } while (++i < 10);
     }
 }
